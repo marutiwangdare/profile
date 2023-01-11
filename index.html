@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Responsive bottom navigation</title>
+    </head>
+    <body>
+        <!--=============== HEADER ===============-->
+        <header class="header" id="header">
+            <nav class="nav ">
+
+                <div class="nav__menu_left" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <img src="assets/img/logo.png" alt="" class="nav__img">
+                        </li>
+                        
+                        <li class="nav__item">
+                            <div class="search-input">
+                                <span> <i class='bx bx-home-alt nav__icon'></i></span>
+                                <input type="search" placeholder="Search a friend">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav__menu_center" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link">
+                                <i class='bx bx-home-alt nav__icon'></i>
+                                <span class="nav__name"></span>
+                            </a>
+                        </li>
+                        
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">
+                                <i class='bx bx-user nav__icon'></i>
+                                <span class="nav__name"></span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#contactme" class="nav__link">
+                                <i class='bx bx-message-square-detail nav__icon'></i>
+                                <span class="nav__name"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav__menu_right" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <div class="nav-user-profile">
+                                <div class="rounded-photo online">
+                                    <img src="assets/img/profile.png" alt="" class="nav__img">
+                                </div>
+                                <div class="profile-name">
+                                    <h1>John</h1>
+                                </div>
+                            </div>
+                            
+                        </li>
+                        
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">
+                                <i class='bx bx-bell nav__icon'></i>
+                                <span class="nav__name"></span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#contactme" class="nav__link" onclick="settings_menu_toggle()">
+                                <i class='bx bx-chevron-down nav__icon'></i>
+                                <span class="nav__name"></span>
+                            </a>
+
+                            <div class="settings-menu">
+                                <div class="settings-menu-inner">
+                                    <div class="aside-user-profile">
+                                        <div class="rounded-photo online">
+                                            <img src="assets/img/profile.png" alt="">
+                                        </div>
+                                        <div class="profile-name">
+                                            <h2>John doe</h2>
+                                            <a href="#"><small>See your profile </small></a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <a href="#"></a><div class="aside-user-profile"><a href="#">
+                                        <div class="icons-menu">
+                                            <span>
+                                                <i class='bx bx-bell nav__icon'></i>
+                                            </span>
+                                        </div>
+                                        </a><div class="profile-name"><a href="#">
+                                            <h2>Give Feedback</h2>
+                                            </a><a href="#"><small>Help us to improve on our design</small></a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <a href="#"><div class="setting-links">
+                                        <i class='bx bx-bell nav__icon'></i>
+                                        <div class="links-text">
+                                            <div>
+                                                <h2>Settings &amp; Privacy</h2>
+                                            </div>
+                                            <div>
+                                                <i class='bx bx-chevron-right nav__icon'></i>
+                                            </div>
+                                        </div>
+                                    </div></a>
+                                    <a href="#"><div class="setting-links">
+                                        <i class='bx bx-bell nav__icon'></i>
+                                        <div class="links-text">
+                                            <h2>Help &amp; Support</h2>
+                                            <i class='bx bx-chevron-right nav__icon'></i>
+                                        </div>
+                                    </div></a>
+                                    <a href="#"><div class="setting-links">
+                                        <i class='bx bx-bell nav__icon'></i>
+                                        <div class="links-text">
+                                            <h2>Dark/Light</h2>
+                                            <div id="dark-btn">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div></a>
+                                    <a href="#"><div class="setting-links">
+                                        <i class='bx bx-bell nav__icon'></i>
+                                        <div class="links-text">
+                                            <h2>Logout</h2> 
+                                            <i class='bx bx-chevron-right nav__icon'></i>
+                                        </div>
+                                    </div></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                   
+                </div>
+            </nav>
+        </header>
+
+        <main class="container">
+            
+            <div class="card">
+                <div class="banner" style=" background-image: url('assets/img/cover.jpg')">
+                    <div class="svg">
+                   
+                        <image src="assets/img/profile.png" alt="">
+   
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="user-info-details">
+                        <div class="name desk">
+                            <h2>Morgan Sweeney</h2>
+                            <small>--Music Artist</small>
+                        </div>
+                    </div>
+                    <div class="profile-icon">
+                    <div>
+                        <a href="#">
+                            <i class="bx bx-dots-vertical-rounded nav__icon"></i>
+                        </a>
+                    </div>
+                            <div class="follow-btn">
+                                
+                                <button><span><i class="bx bx-edit nav__icon"></i> </span>Edit</button>
+                            </div>
+                    </div>
+                  
+                </div>
+                <div class="user-profile-texts mobile">
+                    <div class="user-name">
+                        <h1>john doe</h1>
+                        <small>--Music Artist</small>
+                    </div>
+                    <div class="user-bio">
+                       <p>Music star @ FM Music and Brands, Orange 94.5 and UK Movie star | A Christain | A Single Mother </p>
+                    </div>
+                    <div class="user-followers-info">
+                        <div>
+                            <small><b>500+</b> followers</small>
+                        </div>
+                        <div>
+                            <div class="info-flex">
+                                <div class="occupation">
+                                    <span class="material-icons-sharp">work_outline</span>--Music Artist
+                                </div>
+                                <div class="location">
+                                    <span class="material-icons-sharp">place</span>
+                                    <small>Ondo State, Nigeria</small>
+                                </div>
+                                <div class="status">
+                                    <span class="material-icons-sharp">favorite_border</span>
+                                    <small>Single</small>
+                                </div>
+                                <div class="mutual">
+                                    <span class="material-icons-sharp">diversity_3</span>
+                                    <small>5 mutual friends</small>
+                                </div>
+                                <div class="mutual">
+                                    <span class="material-icons-sharp">people</span>
+                                    <small>Friends</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="profile-msg-btn" type="button"><span><i class="bx bx-message-square-detail nav__icon"></i> </span>Message</button>
+                </div>
+
+              </div>
+
+
+              <div class="desktop-user-profile-container-flex">
+                <div class="desktop-user-profile-container-flex-left desk">
+                    <div class="desktop-user-profile-container-flex-left-about">
+                        <h1>About john doe</h1>
+                    </div>
+                    <div class="user-followers-info">
+                        <div class="info-flex">
+                            <div class="occupation">
+                                <span class="material-icons-sharp">work_outline</span>--Music Artist
+                            </div>
+                            <div class="location">
+                                <span class="material-icons-sharp">place</span>
+                                <small>Ondo State, Nigeria</small>
+                            </div>
+                            <div class="status">
+                                <span class="material-icons-sharp">favorite_border</span>
+                                <small>Single</small>
+                            </div>
+                            <div class="mutual">
+                                <span class="material-icons-sharp">diversity_3</span>
+                                <small>5 mutual friends</small>
+                            </div>
+                            <div class="mutual">
+                                <span class="material-icons-sharp">people</span>
+                                <small>Friends</small>
+                            </div>
+                            <div class="mutual">
+                                <span class="material-icons-sharp">wifi</span>
+                                <small><b>500+</b> followers</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desktop-user-profile-container-flex-left-about">
+                        <h1>BIO</h1>
+                    </div>
+                    <p>Music star @ FM Music and Brands, Orange 94.5 and UK Movie star | A Christain | A Single Mother </p>           
+                    <button class="profile-msg-btn" type="button" style="display: flex; align-items: center; justify-content: center;"><span><i class="bx bx-message-square-detail nav__icon"></i> </span> Message</button>
+        
+                </div>
+                <div class="desktop-user-profile-container-flex-right">
+				
+                    <div class="feed">
+                        <div class="feed-head">
+                            <a href="#"><div class="feed-user">
+                                <div class="rounded-photo">
+                                    <img src="assets/img/profile.png" alt="">
+                                </div>
+                                <div class="feed-user-name">
+                                    <p>Morgan Sweeney</p>
+                                    <small>1 minute ago</small>
+                                </div>
+                            </div></a>
+                            <a href="#"><span><i class="bx bx-dots-horizontal-rounded nav__icon"></i></span></a>
+                        </div>
+                        <div class="feed-text">
+                            <p>Nice time with friends today</p>
+                        </div>
+                        <div class="feed-img">
+                            <img src="assets/img/post.jpg" alt="">
+                        </div>
+                        <div class="feed-actions">
+                            <div class="feed-action">
+                                <a href="#"><div class="feed-span" onclick="reaction_actions()">
+                                    <span><i class="bx bx-heart nav__icon"></i></span>
+                                    <p>2</p>
+                                </div></a>
+                                <a href="#"><div class="feed-span">
+                                    <span><i class="bx bx-message-rounded-add nav__icon"></i></span>
+                                    <p>10</p>
+                                </div></a>
+                                <a href="#">
+                                <div class="feed-span">
+                                    <span><i class="bx bx-share-alt nav__icon"></i></span>
+                                    <p>6</p>
+                                </div></a>
+                            </div>
+                            <a href="#"><span><i class="bx bx-bookmark nav__icon"></i></span></a>
+                        </div>
+                        <div class="liked-by">
+                            <img src="assets/img/profile.png" alt="">
+                            <p>Liked by <b><a href="#">Carl Mike</a></b> and 1 other people</p>
+                        </div>
+                        <a href="#"><small>View all 10 comments</small></a>
+                    </div>
+					
+					                    <div class="feed">
+                        <div class="feed-head">
+                            <a href="#"><div class="feed-user">
+                                <div class="rounded-photo">
+                                    <img src="assets/img/profile.png" alt="">
+                                </div>
+                                <div class="feed-user-name">
+                                    <p>Morgan Sweeney</p>
+                                    <small>1 minute ago</small>
+                                </div>
+                            </div></a>
+                            <a href="#"><span><i class="bx bx-dots-horizontal-rounded nav__icon"></i></span></a>
+                        </div>
+                        <div class="feed-text">
+                            <p>Nice time with friends today</p>
+                        </div>
+                        <div class="feed-img">
+                            <img src="assets/img/post.jpg" alt="">
+                        </div>
+                        <div class="feed-actions">
+                            <div class="feed-action">
+                                <a href="#"><div class="feed-span" onclick="reaction_actions()">
+                                    <span><i class="bx bx-heart nav__icon"></i></span>
+                                    <p>2</p>
+                                </div></a>
+                                <a href="#"><div class="feed-span">
+                                    <span><i class="bx bx-message-rounded-add nav__icon"></i></span>
+                                    <p>10</p>
+                                </div></a>
+                                <a href="#">
+                                <div class="feed-span">
+                                    <span><i class="bx bx-share-alt nav__icon"></i></span>
+                                    <p>6</p>
+                                </div></a>
+                            </div>
+                            <a href="#"><span><i class="bx bx-bookmark nav__icon"></i></span></a>
+                        </div>
+                        <div class="liked-by">
+                            <img src="assets/img/profile.png" alt="">
+                            <p>Liked by <b><a href="#">Carl Mike</a></b> and 1 other people</p>
+                        </div>
+                        <a href="#"><small>View all 10 comments</small></a>
+                    </div>
+					
+					                    <div class="feed">
+                        <div class="feed-head">
+                            <a href="#"><div class="feed-user">
+                                <div class="rounded-photo">
+                                    <img src="assets/img/profile.png" alt="">
+                                </div>
+                                <div class="feed-user-name">
+                                    <p>Morgan Sweeney</p>
+                                    <small>1 minute ago</small>
+                                </div>
+                            </div></a>
+                            <a href="#"><span><i class="bx bx-dots-horizontal-rounded nav__icon"></i></span></a>
+                        </div>
+                        <div class="feed-text">
+                            <p>Nice time with friends today</p>
+                        </div>
+                        <div class="feed-img">
+                            <img src="assets/img/post.jpg" alt="">
+                        </div>
+                        <div class="feed-actions">
+                            <div class="feed-action">
+                                <a href="#"><div class="feed-span" onclick="reaction_actions()">
+                                    <span><i class="bx bx-heart nav__icon"></i></span>
+                                    <p>2</p>
+                                </div></a>
+                                <a href="#"><div class="feed-span">
+                                    <span><i class="bx bx-message-rounded-add nav__icon"></i></span>
+                                    <p>10</p>
+                                </div></a>
+                                <a href="#">
+                                <div class="feed-span">
+                                    <span><i class="bx bx-share-alt nav__icon"></i></span>
+                                    <p>6</p>
+                                </div></a>
+                            </div>
+                            <a href="#"><span><i class="bx bx-bookmark nav__icon"></i></span></a>
+                        </div>
+                        <div class="liked-by">
+                            <img src="assets/img/profile.png" alt="">
+                            <p>Liked by <b><a href="#">Carl Mike</a></b> and 1 other people</p>
+                        </div>
+                        <a href="#"><small>View all 10 comments</small></a>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </main>
+        
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

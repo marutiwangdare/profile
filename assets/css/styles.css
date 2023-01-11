@@ -1,0 +1,745 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  --hue: 174;
+  --sat: 63%;
+  --first-color: hsl(var(--hue), var(--sat), 40%);
+  --first-color-alt: hsl(var(--hue), var(--sat), 36%);
+  --title-color: hsl(var(--hue), 12%, 15%);
+  --text-color: hsl(var(--hue), 8%, 35%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: #FFF;
+  --color-icon : #050505;
+  --color-success: #31A24C;
+  --color-background-white: #fff;
+  --color-light-dark: #84858A;
+  --hover : #e2e2e2;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Open Sans', sans-serif;
+  --h1-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+  --tiny-font-size: .625rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+
+      /*=============Borders, Padding=================*/
+      --border-radius: 2rem;
+      --border-radius-20px: 20px;
+      --card-border-radius: 1rem;
+      --btn-padding: 0.6rem 2rem;
+      --search-padding: 0.6rem 1rem;
+      --card-padding: 1rem;
+
+      /*==================BOX-SHADOW===============*/
+    --box-shadow: 0px 1px 10px rgb(218, 218, 218);
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+  padding: 4.5rem 0 2rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section__height {
+  height: 100vh;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+  padding:  6rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--container-color);
+  z-index: var(--z-fixed);
+  transition: .4s;
+  box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+}
+
+/*=============== NAV ===============*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 2rem;
+}
+
+.nav__img {
+  width: 32px;
+  border-radius: 50%;
+}
+
+.nav__logo {
+  color: var(--title-color);
+  font-weight: 600;
+}
+.search-input{
+  display: flex;
+  align-items: center;
+  background: #F0F2F5;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  width: 170px;
+}
+
+.search-input input{
+  font-size: 1rem;
+  background: transparent;
+}
+
+.search-input input::placeholder{
+  color: #ffffff;
+}
+.search-input input::placeholder{
+  color: var(--color-icon);
+}
+
+.search-input span{
+  margin-right: 0.3rem;
+}
+.nav-user-profile {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--border-radius-20px);
+  transition: all ease 300ms;
+  cursor: pointer;
+}
+.profile-name {
+  line-height: 1rem;
+}
+.icons-menu span {
+  font-size: 1.7rem;
+  margin-right: 0.7rem;
+}
+.nav-user-profile .profile-name h1 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-icon-light);
+  margin-left: 0.3rem;
+}
+
+.online{
+  position: relative;
+}
+
+.online::after{
+  content: '';
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  border: 2px white solid;
+  border-radius: 50%;
+  background: var(--color-success);
+  top: 0;
+  right: 0;
+}
+.settings-menu {
+  position: absolute;
+  width: 90%;
+  max-width: 350px;
+  background: var(--color-background-white);
+  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+  overflow: hidden;
+  top: 75px;
+  right: 2%;
+  max-height: 0;
+  transition: max-height 0.3s;
+}
+.settings-menu-inner {
+  padding: var(--border-radius-20px);
+}
+.settings-menu-height{
+  max-height: 450px;
+}
+.aside-user-profile {
+  display: flex;
+  align-items: center;
+}
+.rounded-photo {
+  width: 2.2rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.rounded-photo img {
+  border-radius: 50%;
+}
+.aside-user-profile .rounded-photo {
+  margin-right: 0.5rem;
+  width: 2rem;
+}
+.online {
+  position: relative;
+}
+.profile-name {
+  line-height: 1rem;
+}
+
+.aside-user-profile .profile-name h2 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.settings-menu-inner hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--color-light-dark);
+  margin: 1rem 0;
+}
+a {
+  color: var(--color-icon-light);
+}
+.icons-menu span {
+  font-size: 1.7rem;
+  margin-right: 0.7rem;
+}
+.setting-links:hover {
+  background: var(--hover);
+}
+.setting-links {
+  display: flex;
+  padding: 0.6rem 0.5rem;
+  align-items: center;
+  border-radius: 10px;
+}
+.setting-links .links-text {
+  flex: 1;
+}
+.links-text {
+  display: flex;
+  align-items: center;
+  margin-left: 0.7rem;
+  justify-content: space-between;
+}
+.links-text h2 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+#dark-btn, #dark-btn2 {
+  background: #ccc;
+  width: 45px;
+  border-radius: 15px;
+  padding: 2px 3px;
+  cursor: pointer;
+  display: flex;
+  transition: padding-left 0.5s, background 0.5s;
+}
+#dark-btn span {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+.feed-action a, span {
+  color: var(--color-dark);
+}
+.desktop-user-profile-page-head-photo {
+  box-shadow: var(--box-shadow);
+  border-bottom-right-radius: 60px;
+}
+.mobile{
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .nav__menu_center {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--container-color);
+    box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+    width: 100%;
+    height: 4rem;
+    padding: 0 1rem;
+    display: grid;
+    align-content: center;
+    border-radius: 1.25rem 1.25rem 0 0;
+    transition: .4s;
+  }
+  .nav__menu_right, .nav__menu_left{
+    display:none;
+  }
+  .desk{
+    display:none;
+  }
+  .mobile{
+    display:inline-block
+  }
+  .container {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 1px;
+}
+.desktop-user-profile-container-flex-right {
+  flex-basis: 100% !important;
+}
+
+}
+
+.nav__list, 
+.nav__link{
+  display: flex;
+}
+.nav__menu_right ul li {
+  display: inline-block;
+}
+.nav__link {
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+.nav__list {
+  justify-content: space-around;
+}
+
+.nav__name {
+  font-size: var(--tiny-font-size);
+  /* display: none;*/ /* Minimalist design, hidden labels */
+}
+
+.nav__icon {
+  font-size: 1.5rem;
+}
+
+/*Active link*/
+.active-link {
+  position: relative;
+  color: var(--first-color);
+  transition: .3s;
+}
+
+
+.card {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0px 1rem 1.5rem rgba(0,0,0,0.5);
+}
+.card .banner {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 16rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+  box-sizing: border-box;
+}
+.card .banner .svg img{
+  background-color: #fff;
+  width: 8rem;
+  height: 8rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+  border-radius: 50%;
+  transform: translateY(50%);
+  margin-left: 0.5rem;
+}
+.card .banner svg:hover {
+  transform: translateY(50%) scale(1.3);
+}
+.card .menu {
+  width: 100%;
+  height: 5.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+}
+.card .menu .opener {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  border-radius: 50%;
+  transition: background-color 100ms ease-in-out;
+}
+.card .menu .opener:hover {
+  background-color: #f2f2f2;
+}
+.card .menu .opener span {
+  background-color: #404040;
+  width: 0.4rem;
+  height: 0.4rem;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 0.2rem);
+  border-radius: 50%;
+}
+.card .menu .opener span:nth-child(1) {
+  top: 0.45rem;
+}
+.card .menu .opener span:nth-child(2) {
+  top: 1.05rem;
+}
+.card .menu .opener span:nth-child(3) {
+  top: 1.65rem;
+}
+.card h2.name {
+  font-size: 1.3rem;
+font-weight: 400;
+  padding: 0 2rem 0.5rem;
+  margin: 0;
+}
+.card .title {
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0 2rem 1.2rem;
+}
+.card .actions {
+  padding: 0 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  order: 99;
+}
+.card .actions .follow-info {
+  padding: 0 0 1rem;
+  display: flex;
+}
+.card .actions .follow-info h2 {
+  text-align: center;
+  width: 50%;
+  margin: 0;
+  box-sizing: border-box;
+}
+.card .actions .follow-info h2 a {
+  text-decoration: none;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  transition: background-color 100ms ease-in-out;
+}
+.card .actions .follow-info h2 a span {
+  color: #1c9eff;
+  font-weight: bold;
+  transform-origin: bottom;
+  transform: scaleY(1.3);
+  transition: color 100ms ease-in-out;
+}
+.card .actions .follow-info h2 a small {
+  color: #afafaf;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+.card .actions .follow-info h2 a:hover {
+  background-color: #f2f2f2;
+}
+.card .actions .follow-info h2 a:hover span {
+  color: #007ad6;
+}
+ .follow-btn button {
+  color: inherit;
+  font: inherit;
+  font-weight: bold;
+  background-color: #677db6;
+  color: #fff;
+  width: 10rem;
+  border: none;
+  height: 2.5rem;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+
+}
+.follow-btn button:hover {
+ 
+  transform: scale(1.1);
+}
+
+.card .desc {
+  text-align: justify;
+  padding: 0 2rem 2.5rem;
+  order: 100;
+}
+.profile-icon{
+  display: flex;
+  align-items: center;
+}
+.user-info-details{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 8rem;
+}
+.user-name {
+  line-height: 1.5rem;
+  margin: 1rem 0;
+}
+.user-name h1 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.user-bio {
+  word-wrap: break-word;
+}
+.user-followers-info {
+  margin-top: 0.6rem;
+  display: block;
+  word-wrap: break-word;
+}
+.info-flex {
+  display: block;
+  line-height: 1.9rem;
+} 
+.info-flex div {
+  display: flex;
+  align-items: center;
+}
+.profile-msg-btn {
+  width: 100%;
+  height: 2rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  background: #677db6;
+  color: #fff;
+  margin: 0.5rem 0;
+    margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.user-profile-texts {
+  padding: 0 0.7rem;
+}
+.desktop-user-profile-container-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.desktop-user-profile-container-flex-left {
+  flex-basis: 39%;
+  background: var(--color-background-white);
+  height: max-content;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  overflow: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5rem;
+}
+.desktop-user-profile-container-flex-left-about {
+  padding: 0.3rem 0.5rem;
+  background: var(--hover);
+  margin: 1rem 0;
+  border-radius: 5px;
+}
+.desktop-user-profile-container-flex-left-about h1 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+}
+.user-followers-info {
+  margin-top: 0.6rem;
+  display: block;
+  word-wrap: break-word;
+}
+.desktop-user-profile-container-flex-left .user-followers-info .info-flex {
+  line-height: 3rem;
+}
+.info-flex {
+  display: block;
+  line-height: 1.9rem;
+}
+.info-flex div {
+  display: flex;
+  align-items: center;
+}
+.desktop-user-profile-container-flex-left .user-followers-info span {
+  font-size: 1.6rem;
+  margin-right: 1rem;
+}
+.desktop-user-profile-container-flex-left .user-followers-info small {
+  font-size: 1.1rem;
+}
+
+.desktop-user-profile-container-flex-right {
+  flex-basis: 59%;
+  background: var(--color-background-white);
+  height: max-content;
+  width: 100%;
+  padding: 0rem 2rem 1rem;
+  border-radius: 10px;
+  overflow: auto;
+  box-shadow: var(--box-shadow);
+}
+.feed {
+  margin-top: 2rem;
+  background: var(--color-background-white);
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+.feed-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.feed-user {
+  display: flex;
+  align-items: center;
+}
+.feed-user-name {
+  line-height: 0.9rem;
+  margin-left: 0.5rem;
+}
+.feed-user-name p {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-icon);
+}
+.feed-text {
+  word-wrap: break-word;
+  margin: 1rem 0;
+}
+.feed-img img {
+  border-radius: var(--border-radius-20px);
+  object-fit: cover;
+}
+img {
+  display: block;
+  width: 100%;
+}
+.feed-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.feed-action {
+  display: flex;
+  align-items: center;
+}
+.feed-action .feed-span {
+  margin-right: 1rem;
+}
+.feed-span {
+  display: flex;
+  align-items: center;
+}
+.liked-by {
+  display: flex;
+  align-items: center;
+}
+.liked-by img {
+  width: 1rem;
+  border-radius: 50%;
+}
+.liked-by p {
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+/* Remove if you choose, the minimalist design */
+@media screen and (max-width: 320px) {
+  .nav__name {
+    display: none;
+  }
+
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .nav__list {
+    justify-content: center;
+    column-gap: 2rem;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding: 7rem 0 2rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem); /* 4.5rem */
+  }
+
+  .nav__name {
+    font-size: var(--normal-font-size);
+    /* display: block; */ /* Minimalist design, visible labels */
+  }
+  .nav__link:hover {
+    color: var(--first-color);
+  }
+
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+ 
+}
