@@ -25,7 +25,7 @@
                         
                         <li class="nav__item">
                             <div class="search-input">
-                                <span> <i class='bx bx-home-alt nav__icon'></i></span>
+                                <span> <i class='bx bx-search nav__icon'></i></span>
                                 <input type="search" placeholder="Search a friend">
                             </div>
                         </li>
@@ -51,6 +51,13 @@
                         <li class="nav__item">
                             <a href="#contactme" class="nav__link">
                                 <i class='bx bx-message-square-detail nav__icon'></i>
+                                <span class="nav__name"></span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item mobile">
+                            <a href="#contactme" class="nav__link mobile-menu-open">
+                                <i class='bx bx-menu nav__icon'></i>
                                 <span class="nav__name"></span>
                             </a>
                         </li>
@@ -169,13 +176,13 @@
                     </div>
                     <div class="profile-icon">
                     <div>
-                        <a href="#">
+                           <span onclick="openProfileAction()">
                             <i class="bx bx-dots-vertical-rounded nav__icon"></i>
-                        </a>
+                           </span> 
                     </div>
                             <div class="follow-btn">
                                 
-                                <button><span><i class="bx bx-edit nav__icon"></i> </span>Edit</button>
+                                <button onclick="editPopUp()"><span><i class="bx bx-edit"></i> </span>Edit</button>
                             </div>
                     </div>
                   
@@ -195,23 +202,27 @@
                         <div>
                             <div class="info-flex">
                                 <div class="occupation">
-                                    <span class="material-icons-sharp">work_outline</span>--Music Artist
+                                    <span class="material-icons-sharp"> <i class="bx bx-briefcase-alt-2"></i></span>--Music Artist
                                 </div>
                                 <div class="location">
-                                    <span class="material-icons-sharp">place</span>
+                                    <span class="material-icons-sharp"><i class="bx bx-location-plus"></i></span>
                                     <small>Ondo State, Nigeria</small>
                                 </div>
                                 <div class="status">
-                                    <span class="material-icons-sharp">favorite_border</span>
+                                    <span class="material-icons-sharp"><i class="bx bx-heart"></i></span>
                                     <small>Single</small>
                                 </div>
                                 <div class="mutual">
-                                    <span class="material-icons-sharp">diversity_3</span>
+                                    <span class="material-icons-sharp"><i class="bx bx-aperture"></i></span>
                                     <small>5 mutual friends</small>
                                 </div>
                                 <div class="mutual">
-                                    <span class="material-icons-sharp">people</span>
+                                    <span class="material-icons-sharp"><i class="bx bx-group"></i></span>
                                     <small>Friends</small>
+                                </div>
+                                <div class="mutual">
+                                    <span class="material-icons-sharp"><i class="bx bx-wifi-2"></i></span>
+                                    <small><b>500+</b> followers</small>
                                 </div>
                             </div>
                         </div>
@@ -230,26 +241,26 @@
                     <div class="user-followers-info">
                         <div class="info-flex">
                             <div class="occupation">
-                                <span class="material-icons-sharp">work_outline</span>--Music Artist
+                                <span class="material-icons-sharp"> <i class="bx bx-briefcase-alt-2"></i></span>--Music Artist
                             </div>
                             <div class="location">
-                                <span class="material-icons-sharp">place</span>
+                                <span class="material-icons-sharp"><i class="bx bx-location-plus"></i></span>
                                 <small>Ondo State, Nigeria</small>
                             </div>
                             <div class="status">
-                                <span class="material-icons-sharp">favorite_border</span>
+                                <span class="material-icons-sharp"><i class="bx bx-heart"></i></span>
                                 <small>Single</small>
                             </div>
                             <div class="mutual">
-                                <span class="material-icons-sharp">diversity_3</span>
+                                <span class="material-icons-sharp"><i class="bx bx-aperture"></i></span>
                                 <small>5 mutual friends</small>
                             </div>
                             <div class="mutual">
-                                <span class="material-icons-sharp">people</span>
+                                <span class="material-icons-sharp"><i class="bx bx-group"></i></span>
                                 <small>Friends</small>
                             </div>
                             <div class="mutual">
-                                <span class="material-icons-sharp">wifi</span>
+                                <span class="material-icons-sharp"><i class="bx bx-wifi-2"></i></span>
                                 <small><b>500+</b> followers</small>
                             </div>
                         </div>
@@ -400,6 +411,151 @@
 
         </main>
         
+<!--------------------========User Profile Edit for Desktop----------------==========-->
+<div class="user-profile-edit-pop-up-bg">
+
+    <div class="user-profile-edit-pop-up">
+        <div class="user-profile-edit-pop-up-head">
+            <div>
+                <span  onclick="closeEditPopUp()"><i class="bx bx-x-circle"></i></span>
+            </div>
+            <div class="user-profile-edit-pop-up-head-texts-h1">
+                <h1>Edit Your Profile</h1>
+            </div>
+        </div>
+        <!-- Background Photo -->
+        <div class="user-profile-edit-pop-up-head-btn">
+            <p>Background Photo</p>
+            <button type="button" class="edit-btn">Edit <span><i class="bx bx-edit"></i></span></button>
+        </div>
+        <div class="user-profile-edit-pop-up-bg-photo">
+            <img src="assets/img/cover.jpg" alt="">
+        </div>
+
+        <!-- Profile Photo -->
+        <div class="user-profile-edit-pop-up-head-btn">
+            <p>Profile Photo</p>
+            <button type="button" class="edit-btn">Edit<span><i class="bx bx-edit"></i></span></button>
+        </div>
+        <center>
+            <div class="user-profile-edit-pop-up-bg-profile-photo">
+                <img src="assets/img/profile.png" alt="">
+            </div>
+        </center>
+
+        <!-- Bio -->
+        <div class="user-profile-edit-pop-up-head-btn">
+            <p>Bio</p>
+            <button type="button" class="edit-btn">Edit<span><i class="bx bx-edit"></i></span></button>
+        </div>
+        <div class="user-bio">
+            <p>Music star @ FM Music and Brands, Orange 94.5 and UK Movie star | A Christain | A Single Mother </p>
+         </div>
+
+        <!-- Marital Status -->
+        <div class="user-profile-edit-pop-up-head-btn">
+            <p>Status</p>
+            <button type="button" class="edit-btn">Edit<span><i class="bx bx-edit"></i></span></button>
+        </div>
+        <div class="user-bio-status">
+            <p>Single</p>
+         </div>
+
+        <!-- Profession -->
+        <div class="user-profile-edit-pop-up-head-btn">
+            <p>Profession</p>
+            <button type="button" class="edit-btn">Edit<span><i class="bx bx-edit"></i></span></button>
+        </div>
+        <div class="user-bio-status">
+            <p>--Music Artist</p>
+         </div>
+    </div>
+
+</div>
+
+<div class="user-profile-page-action">
+    <div class="user-profile-action-icons">
+        <div class="line">
+            <span class="material-icons-sharp"> <i class="bx bx-group"></i></span><p>Follow</p>
+        </div>
+    </div>
+    <div class="user-profile-action-icons">
+        <div class="line">
+            <span class="material-icons-sharp"> <i class="bx bx-copy"></i></span><p>Copy link to profile</p>
+        </div> 
+    </div>
+    <div class="user-profile-action-icons">
+        <div class="line">
+            <span class="material-icons-sharp"> <i class="bx bx-message"></i></span><p>Message</p>
+        </div> 
+    </div>
+    <div class="user-profile-action-icons">
+        <div class="line">
+            <span class="material-icons-sharp"> <i class="bx bx-minus-circle"></i></span>  <p>Block <b style="color: rgb(221, 62, 62);">Mercy..</b></p>
+        </div> 
+    </div>
+    <div class="user-profile-action-icons">
+        <button type="button" class="action-btn" onclick="closeProfile()">Close</button>
+    </div>
+</div>
+
+<!-----------------------------Mobile Menu----------------------------->
+<div class="mobile-menu">
+    <a href="#" class="mobile-menu-profile">
+        <div class="mobile-menu-profile-photo">
+            <img src="assets/img/profile.png" alt="">
+        </div>
+        <div class="mobile-menu-profile-name">
+            <p>John Doe</p>
+        </div>
+    </a>
+
+    <div><a href="">
+        <span class="material-icons-sharp"> <i class='bx bx-spa '></i></span>
+        <p>Friends</p>
+    </a></div>
+
+    <div><a href="">
+        <span class="material-icons-sharp"> <i class='bx bx-shield-minus '></i></span>
+        <p>Groups</p>
+    </a></div>
+
+    <div><a href="">
+        <span class="material-icons-sharp"> <i class='bx bx-color '></i></span>
+        <p>Marketplace</p>
+    </a></div>
+
+    <div><a href="">
+        <span class="material-icons-sharp"> <i class='bx bx-cheese '></i></span>
+        <p>Messenger</p>
+    </a></div>
+
+    <div><a href="">
+        <span class="material-icons-sharp"> <i class='bx bx-knife '></i></span>
+        <p>Notification</p>
+    </a></div>
+
+    <div><a href="">
+        <span class="material-icons-sharp"> <i class='bx bx-fork '></i></span>
+        <p>Settings &amp; Privacy</p>
+    </a></div>
+    <div><a href="#">
+        <span class="material-icons-sharp"> <i class='bx bx-analyse '></i></span>
+        <p>Dark/Light</p>
+        <div id="dark-btn2">
+            <span></span>
+        </div>
+    </a></div>
+
+
+    <div><a href="">
+        <span class="material-icons-sharp"><i class='bx bx-bell '></i></span>
+        <p> Help &amp; Support</p>
+    </a></div>
+    <div class="mobile-menu-close-btn">
+        <span class="material-icons-sharp mobile-menu-close-btn"><i class="bx bx-x-circle"></i></span>
+    </div>
+</div>
 
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
